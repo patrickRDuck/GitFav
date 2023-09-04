@@ -53,7 +53,7 @@ export class favorite {
         document.querySelector('tbody').innerHTML = ''
         const users = utility.readLocalStorage('users')
 
-        if(users.length >= 1) {
+        if(users.length >= 1 || users !== null) {
             document.querySelector('.no-favorites').style.display = 'none'
 
             users.forEach(user => {
