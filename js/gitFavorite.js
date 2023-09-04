@@ -51,9 +51,9 @@ export class favorite {
 
     update() {
         document.querySelector('tbody').innerHTML = ''
-        const users = utility.readLocalStorage('users')
+        const users = utility.readLocalStorage('users') ?? []
 
-        if(users.length >= 1 || users !== null) {
+        if(users.length >= 1) {
             document.querySelector('.no-favorites').style.display = 'none'
 
             users.forEach(user => {
