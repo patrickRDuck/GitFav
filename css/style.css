@@ -1,0 +1,236 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 62.5%;
+    font-family: 'Roboto', sans-serif;
+
+    --bc-btn: #065E7C;
+    --fc-btn: #FFF;
+    --bc-input: #06181C;
+
+
+    --hue: 194;
+    --bc-tr-even: hsla(var(--hue), 72%, 13%, 1);
+    --bc-tr-odd: hsla(var(--hue), 92%, 4%, 1);
+
+    --fc-table: hsla(240, 9%, 89%, 1);
+}
+
+
+body {
+    background-color: #000;
+}
+
+.app {
+    max-width: 115rem;
+
+    margin: 0 auto;
+    padding: 9rem 2rem;
+}
+
+.app header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.app header .searchUser {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.app header .searchUser input {
+    background-color: var(--bc-input);
+
+    color: hsla(240, 6%, 51%, 1);
+    font-size: 1.6rem;
+
+    padding: 1.6rem;
+    
+    border-radius: .5rem;
+    border: none;
+    outline: none;
+
+    min-width: calc(29vw + 2rem);
+}
+
+.app header .searchUser button {
+    background-color: var(--bc-btn);
+
+    border-radius: .5rem;
+    border: none;
+
+    color: var(--fc-btn);
+    font-size: 1.4rem;
+    font-weight: 700;
+    text-transform: uppercase;
+
+    padding: 1.3rem;
+
+    display: inline-flex;
+    align-items: center;
+    gap: .8rem;
+
+    cursor: pointer;
+
+    transition: all 275ms ease-in-out;
+}
+
+.app header .searchUser button svg path {
+    transition: all 275ms ease-in-out;
+}
+
+.app header .searchUser button:hover {
+    --bc-btn: #fff;
+    --fc-btn: #065E7C;
+
+}
+
+.app header .searchUser button:hover svg path {
+    fill: var(--fc-btn);
+}
+
+.table-wrapper::-webkit-scrollbar {
+    width: 6px;
+}
+
+.table-wrapper::-webkit-scrollbar-thumb {
+    background-color: transparent;
+    border-radius: 10px;
+    transition: all 3s ease-in;
+}
+
+.table-wrapper:hover::-webkit-scrollbar-thumb {
+    background-color: hsla(191, 31%, 42%, 1);
+}
+
+.table-wrapper::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.table-wrapper {
+    max-height: 50rem;
+    width: 100%;
+
+    overflow-y: scroll;
+
+    margin-block: 8rem;
+
+    position: relative;
+
+    box-shadow: 0 1rem 2rem -1rem rgba(0, 0, 0, 0.3);
+
+    border-radius: .6rem;
+}
+
+table {
+    width: 100%;
+
+    border-collapse: collapse;
+}
+
+table * {
+    color: var(--fc-table);
+    font-size: 2rem;
+    font-weight: 400;
+}
+
+table td, table th {
+    padding: 1.6rem;
+}
+
+table thead th {
+    background-color: hsla(var(--hue), 72%, 17%, 1);
+    text-align: left;
+    
+    position: sticky;
+    top: 0;
+    left: 0;
+}
+
+table th:first-child {
+    border-top-left-radius: .6rem;
+}
+
+table th:last-child {
+    border-top-right-radius: .6rem;
+}
+
+table tr:last-child td:first-child {
+    border-bottom-left-radius: .6rem;
+}
+
+table tr:last-child td:last-child {
+    border-bottom-right-radius: .6rem;
+}
+
+table tr:nth-child(odd) {
+    background-color: var(--bc-tr-odd);
+}
+
+table tr:nth-child(even) {
+    background-color: var(--bc-tr-even);
+}
+
+table tr {
+    transition: all 250ms ease-in-out;
+}
+
+table tr:hover {
+    background-color: hsla(var(--hue), 62%, 23%, 0.8);
+}
+
+table td.user {
+    display: flex;
+    gap: 1.6rem;
+    align-items: center;
+}
+
+table td img {
+    max-height: 5.6rem;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+table td a {
+    display: flex;
+    flex-direction: column;
+    gap: .8rem;
+
+    text-decoration: none;
+}
+
+table td a span {
+    color: #d7d7dd;
+}
+
+table td.remove button {
+    border: none;
+    background: transparent;
+    color: hsla(355, 91%, 66%, 1);
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.no-favorites {
+    display: flex;
+    gap: 6rem;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--bc-tr-odd);
+
+    border-radius: 0 0 .6rem .6rem;
+
+    height: calc(50rem - 10vh);
+}
+
+.no-favorites {
+    color: #4E5455;
+    font-size: 4rem;
+    font-weight: 700;
+}
