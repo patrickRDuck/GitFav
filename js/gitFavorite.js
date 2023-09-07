@@ -39,9 +39,16 @@ export class favorite {
 
     removeOption () {
         const users = utility.readLocalStorage('users')
+        let contador = 0
+
         for(const user of users) {
             document.getElementById(`remove-user-${user.id}`).addEventListener('click', () => {
                 this.entries = this.entries.filter(object => object.login !== user.login)
+                this.entries.forEach(element => {
+                    ++contador
+                    element.id = contador
+                })
+
                 utility.removeFromLocalStorage('users')
                 utility.addLocalStorage('users', this.entries)
                 this.update()
